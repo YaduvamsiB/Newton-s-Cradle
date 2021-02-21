@@ -3,7 +3,7 @@ class roof {
     this.ground = Bodies.rectangle(x, y, width, height, { isStatic: true });
     this.width = width;
     this.height = height;
-    World.add(World, this.ground);
+    World.add(world, this.ground);
   }
   display() {
     rectMode(CENTER);
