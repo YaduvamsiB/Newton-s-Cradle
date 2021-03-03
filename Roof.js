@@ -1,8 +1,9 @@
 class roof {
   constructor(x, y, width, height) {
-    this.ground = Bodies.rectangle(x, y, width, height, { isStatic: true });
     this.width = width;
     this.height = height;
+
+    this.ground = Bodies.rectangle(x, y, width, height, { isStatic: true });
     World.add(world, this.ground);
   }
   display() {
