@@ -26,11 +26,11 @@ function setup() {
 
   bobDiameter = 40;
 
-  rope1 = new rope(bob1.body, myRoof.body, -bobDiameter * 2, 0);
-  rope2 = new rope(bob2.body, myRoof.body, -bobDiameter * 1, 0);
-  rope3 = new rope(bob3.body, myRoof.body, 0, 0);
-  rope4 = new rope(bob4.body, myRoof.body, bobDiameter * 1, 0);
-  rope5 = new rope(bob5.body, myRoof.body, bobDiameter * 2, 0);
+  rope1 = new rope(bob1.body, myRoof.ground, -bobDiameter * 5, 0);
+  rope2 = new rope(bob2.body, myRoof.ground, -bobDiameter * 2.5, 0);
+  rope3 = new rope(bob3.body, myRoof.ground, 0, 0);
+  rope4 = new rope(bob4.body, myRoof.ground, bobDiameter * 2.5, 0);
+  rope5 = new rope(bob5.body, myRoof.ground, bobDiameter * 5, 0);
 
   Engine.run(engine);
 }
@@ -59,10 +59,13 @@ function draw() {
 }
 
 function keyPressed() {
-  if (keyDown === UP_ARROW) {
+  if (keyCode === 32) {
     Matter.Body.applyForce(bob1.body, bob1.body.position, {
-      x: -50,
-      y: -45,
+      x: -20,
+      y: -20,
     });
+  }
+  if (keyCode === LEFT_ARROW) {
+    bob1.x = bob1.x - 25;
   }
 }
